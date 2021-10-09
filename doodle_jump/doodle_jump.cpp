@@ -15,10 +15,12 @@ int main() {
 	C_Platform* c_platform = new C_Platform();
 	C_Window* background = new C_Window();
 	C_Window* font = new C_Window();
-	/*С_Цштвщц fw(1000, 700, "score++");
-	fw.showWindow();
+	C_Window* fw = new C_Window;
+	C_Platform * score = new C_Platform();
+	sf::Text scoreText;
+	// fw.showWindow();
 	sf::Font MyFont;
-	sf::Text myText;*/
+	sf::Text myText;
 	// myText.setString("score++");
 
 	while (window.isOpen()) {
@@ -39,7 +41,9 @@ int main() {
 		c_doodle->Draw(window);
 		c_platform->Draw(window);
 		font->clear(sf::Color(133, 220, 242, 255));
-		// font->Draw_Font(myText);
+		score += 1;
+		// scoreText.setString("Score: " + std::to_string(* score));
+		// font->Draw_Font(myText->setString());
 		window.display();
 	}
 	delete(c_platform);

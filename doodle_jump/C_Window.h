@@ -4,7 +4,7 @@ class C_Window : public sf::RenderWindow {
 	sf::Color _bgColor;
 
 	sf::Texture texture_background;
-	sf::Sprite * sprite_background;
+	sf::Sprite* sprite_background;
 	sf::IntRect IntRect;
 
 	int window_width;
@@ -13,10 +13,14 @@ class C_Window : public sf::RenderWindow {
 	sf::Font myFont;
 	sf::Text myText;
 	sf::Sprite* sprite_font;
+
+	sf::Font font;
+	
+
 public:
 
 	// 
-	C_Window() : RenderWindow (sf::VideoMode(window_width, window_height), "Doodle Game") {
+	C_Window() : RenderWindow(sf::VideoMode(window_width, window_height), "Doodle Game") {
 		_bgColor = sf::Color::White;
 
 		texture_background.loadFromFile("background.png");
@@ -25,6 +29,17 @@ public:
 		if (!myFont.loadFromFile("arial.ttf")) {
 			throw;
 		}
+		sf::Text scoreText;
+		scoreText.setFont(font);
+		scoreText.setCharacterSize(50);
+		scoreText.setFillColor(sf::Color::Red);
+		sf::Text gameoverText;
+		gameoverText.setFont(font);
+		gameoverText.setString("Game Over!");
+		gameoverText.setCharacterSize(80);
+		gameoverText.setFillColor(sf::Color::Red);
+
+
 		myText.setFont(myFont);
 		myText.setString("score++");
 		myText.setCharacterSize(40);
@@ -40,7 +55,7 @@ public:
 	void Draw_Font(RenderWindow& windowFont) { windowFont.draw(*sprite_font); }
 
 	// 
-	void Draw(RenderWindow& windowBackground){ windowBackground.draw(*sprite_background); }
+	void Draw(RenderWindow& windowBackground) { windowBackground.draw(*sprite_background); }
 
 	// цвет
 	void setBgColor(int r, int g, int b) {

@@ -15,6 +15,7 @@ class C_Platform {
 	sf::Sprite sprite;
 	sf::Font myFont;
 	sf::Text myText;
+	sf::Text scoreText;
 public:
 	C_Platform() {
 		srand((time(nullptr)));
@@ -49,10 +50,11 @@ public:
 		for (int i = 0; i < BAR_COUNT; ++i) {
 			if (pPlayer->GetDy() > 0 && pPlayer->GetX() + pPlayer->GetWidth() > vector_Plat[i].x_Plat && pPlayer->GetX() < vector_Plat[i].x_Plat + imgWidth
 				&& pPlayer->GetY() + pPlayer->GetHeight() + 55 > vector_Plat[i].y_Plat && pPlayer->GetY() + pPlayer->GetHeight() < vector_Plat[i].y_Plat + 1)
-            {
-
+			{
+				
+				
 				system("CLS");
-				std::cout << " Doodle managed to jump "<< score++ <<" plates";
+				std::cout << " Doodle managed to jump " << score++ << " plates";
 				pPlayer->Jump();
 				return true;
 			}
@@ -73,6 +75,20 @@ public:
 			}
 		}
 	}
+
+	/*void emergence_coin(C_Doodle* pPlayer) {
+		const int limit = HEIGHT / 3;
+		if (pPlayer->GetY() < limit) {
+			for (int i = 0; i < COIN_COUNT; ++i) {
+				pPlayer->SetY(limit);
+				vector_Plat[i].y_Plat -= (pPlayer->GetDy());
+				if (vector_Plat[i].y_Plat > HEIGHT + 10) {
+					vector_Plat[i].y_Plat = rand() % HEIGHT / 3 + 100;
+					vector_Plat[i].x_Plat = rand() % WIDTH;
+				}
+			}
+		}
+	}*/
 
 	~C_Platform() { delete(sprite_platform); }
 };
