@@ -15,11 +15,11 @@ int main() {
 	C_Platform* c_platform = new C_Platform();
 	C_Window* background = new C_Window();
 	C_Window* font = new C_Window();
-	/*Font_Window fw(1000, 700, "score++");
+	/*С_Цштвщц fw(1000, 700, "score++");
 	fw.showWindow();
 	sf::Font MyFont;
-	sf::Text myText;
-	myText.setString("score++");*/
+	sf::Text myText;*/
+	// myText.setString("score++");
 
 	while (window.isOpen()) {
 		sf::Event event;
