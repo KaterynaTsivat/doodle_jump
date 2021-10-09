@@ -10,7 +10,7 @@ class C_Platform {
 	sf::Sprite* sprite_platform;
 	sf::Texture texture_platform;
 	int imgWidth;
-	int score;
+	int score = 1;
 	sf::Texture texture;
 	sf::Sprite sprite;
 	sf::Font myFont;

@@ -9,6 +9,10 @@ class C_Window : public sf::RenderWindow {
 
 	int window_width;
 	int window_height;
+
+	sf::Font myFont;
+	sf::Text myText;
+	sf::Sprite* sprite_font;
 public:
 
 	// 
@@ -17,7 +21,23 @@ public:
 
 		texture_background.loadFromFile("background.png");
 		sprite_background = new sf::Sprite(texture_background);
+
+		if (!myFont.loadFromFile("arial.ttf")) {
+			throw;
+		}
+		myText.setFont(myFont);
+		myText.setString("score++");
+		myText.setCharacterSize(40);
+		sf::Color color = sf::Color(50, 168, 62, 255);
+		myText.setFillColor(color);
+		myText.setPosition(100, 100);
+		// sprite.setTexture(texture);
+		// myImage.setPosition(100, 100);
+		// texture.create(20, 20);
+		myText.setStyle(sf::Text::Bold);
 	}
+
+	void Draw_Font(RenderWindow& windowFont) { windowFont.draw(*sprite_font); }
 
 	// 
 	void Draw(RenderWindow& windowBackground){ windowBackground.draw(*sprite_background); }

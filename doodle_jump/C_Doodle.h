@@ -51,7 +51,7 @@ public:
 		// перемещение дудла с помощью стрелок на клавиатуре
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))   x += 4;
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))    x -= 4;
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))      y -= 20;
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))      y -= 100;
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))    y += 8;
 
 		// проверка что б дудл не вылетал влево из окна
